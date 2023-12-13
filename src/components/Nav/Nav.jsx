@@ -2,6 +2,7 @@
 import './Nav.sass';
 // import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import projectsData from '../../data/projects.json';
 
 function Nav() {
   // const [showLinks, setShowLinks] = useState(false);
@@ -24,31 +25,12 @@ function Nav() {
       </a>
       <ul className="navbar__links">
         <li className="navbar__item">Series</li>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
-            Naturaleza suspendida
-          </Link>
-        </li>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
-            Ausencia
-          </Link>
-        </li>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
-            Sustancia
-          </Link>
-        </li>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
-            Submarino
-          </Link>
-        </li>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
-            Isla
-          </Link>
-        </li>
+        {projectsData.map((project) => (
+          <li key={project.id}>
+            <Link to={`/${project.id}`}>{project.title}</Link>
+          </li>
+        ))}
+
         <span className="navbar__separateur"></span>
         <li className="navbar__item">
           <Link to="/" className="navbar__link">
