@@ -1,67 +1,74 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import './Nav.sass';
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+// import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
-  const [showLinks, setShowLinks] = useState(false);
-  const location = useLocation();
+  // const [showLinks, setShowLinks] = useState(false);
+  // // const location = useLocation();
 
-  const handleShowLinks = () => {
-    setShowLinks(!showLinks);
-  };
-  // Fermeture de la Nav après avoir cliqué sur un lien
-  const closeNav = () => {
-    if (showLinks) {
-      setShowLinks(false);
-    }
-  };
-
-  //Localisation, navigation vers la section selectionnée + fermeture du menu
-  useEffect(() => {
-    const targetSection = location.hash.substring(1);
-    if (location.pathname === '/' && location.hash) {
-      scrollToSection(targetSection);
-      closeNav();
-    }
-  }, [location]);
-
-  // Déplacement vers la section correspondante
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView();
-    }
-  };
+  // const handleShowLinks = () => {
+  //   setShowLinks(!showLinks);
+  // };
+  // // Fermeture de la Nav après avoir cliqué sur un lien
+  // const closeNav = () => {
+  //   if (showLinks) {
+  //     setShowLinks(false);
+  //   }
+  // };
 
   return (
-    <nav className={`navbar ${showLinks ? 'show-nav' : 'hide-nav'}`}>
-      <a href="/" className="navbar__logo" onClick={closeNav}>
+    <nav className="navbar">
+      <a href="/" className="navbar__logo">
         SANTIAGO CARRERA
       </a>
       <ul className="navbar__links">
+        <li className="navbar__item">Series</li>
         <li className="navbar__item">
-          <Link to="/#accueil" className="navbar__link" onClick={closeNav}>
-            ACCUEIL
+          <Link to="/" className="navbar__link">
+            Naturaleza suspendida
           </Link>
         </li>
         <li className="navbar__item">
-          <Link to="/#works" className="navbar__link" onClick={closeNav}>
-            PORTFOLIO
+          <Link to="/" className="navbar__link">
+            Ausencia
           </Link>
         </li>
         <li className="navbar__item">
-          <Link to="/#about" className="navbar__link" onClick={closeNav}>
-            A PROPOS
+          <Link to="/" className="navbar__link">
+            Sustancia
           </Link>
         </li>
         <li className="navbar__item">
-          <Link to="/#contact" className="navbar__link" onClick={closeNav}>
-            CONTACT
+          <Link to="/" className="navbar__link">
+            Submarino
+          </Link>
+        </li>
+        <li className="navbar__item">
+          <Link to="/" className="navbar__link">
+            Isla
+          </Link>
+        </li>
+        <span className="navbar__separateur"></span>
+        <li className="navbar__item">
+          <Link to="/" className="navbar__link">
+            Bio
+          </Link>
+        </li>
+        <span className="navbar__separateur"></span>
+        <li className="navbar__item">
+          <Link to="/" className="navbar__link">
+            Statement
+          </Link>
+        </li>
+        <span className="navbar__separateur"></span>
+        <li className="navbar__item">
+          <Link to="/" className="navbar__link">
+            Contacto
           </Link>
         </li>
       </ul>
-      <button className="navbar__burger" onClick={handleShowLinks}>
+      <button className="navbar__burger">
         <span className="burger-bar"></span>
       </button>
     </nav>
