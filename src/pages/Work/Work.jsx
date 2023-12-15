@@ -1,11 +1,6 @@
 import './Work.sass';
 import { useParams } from 'react-router-dom';
 import projectsData from '../../data/projects.json';
-// import Responsive from '../../components/Responsive/Responsive';
-// import FicheTitle from '../../components/FicheTitle/FicheTitle';
-// import Tag from '../../components/Tag/Tag';
-// import Description from '../../components/Description/Description';
-// import Button from '../../components/Button/Button';
 import Error from '../../components/Error/Error';
 
 function Work() {
@@ -17,16 +12,24 @@ function Work() {
     return <Error />;
   }
   // Déstructuration d'objets pour extraire les propriétés individuelles de l'objet  du projet sélectionné.
-  const { title, cover, info, pictures } = selectedProject;
+  const { title, info, pictures } = selectedProject;
 
   return (
     <div className="main" key={id}>
+      {/* <div className="section"> */}
       <h2>{title}</h2>
       <div className="gallery">
-        <img src={cover} alt="" />
-        <img src={pictures} alt="" />
+        {pictures.map((picture, index) => (
+          <img
+            className="gallery__image"
+            key={index}
+            src={picture}
+            alt={`${title} by Santiago Carrera`}
+          />
+        ))}
       </div>
-      <p>{info}</p>
+      <p className="info">{info}</p>
+      {/* </div> */}
     </div>
   );
 }

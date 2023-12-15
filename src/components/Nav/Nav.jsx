@@ -26,8 +26,10 @@ function Nav() {
       <ul className="navbar__links">
         <li className="navbar__item">Series</li>
         {projectsData.map((project) => (
-          <li key={project.id}>
-            <Link to={`/${project.id}`}>{project.title}</Link>
+          <li key={project.id} className="navbar__item">
+            <Link to={`/${project.id}`} className="navbar__link">
+              {project.title}
+            </Link>
           </li>
         ))}
 
