@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="main" id="accueil">
       {projectsData.map((project) => (
-        <Section key={project.id} id={project.id} />
+        <Section key={project.id} id={project.id} cover={project.cover} />
       ))}
     </div>
   );

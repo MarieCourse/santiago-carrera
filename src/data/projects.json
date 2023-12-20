@@ -2,7 +2,7 @@
   {
     "id": "naturaleza-suspendida",
     "title": "Naturaleza Suspendida",
-    "cover": "src/assets/image-banner-1.jpg",
+    "cover": "src/assets/naturaleza-suspendida/naturaleza-suspendida (9).webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
       "src/assets/naturaleza-suspendida/naturaleza-suspendida (1).webp",
@@ -21,7 +21,7 @@
   {
     "id": "sustancia",
     "title": "Sustancia",
-    "cover": "src/assets/image-banner-1.jpg",
+    "cover": "src/assets/sustancia/sustancia (3).webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
       "src/assets/sustancia/sustancia (1).webp",
@@ -35,7 +35,7 @@
   {
     "id": "ausencia",
     "title": "Ausencia",
-    "cover": "src/assets/image-banner-1.jpg",
+    "cover": "src/assets/ausencia/ausencia (1).webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
       "src/assets/ausencia/ausencia (1).webp",
@@ -46,7 +46,7 @@
   {
     "id": "submarino",
     "title": "Submarino",
-    "cover": "src/assets/image-banner-1.jpg",
+    "cover": "src/assets/submarino/submarino (2).webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
       "src/assets/submarino/submarino (1).webp",
@@ -64,6 +64,9 @@
     "cover": "src/assets/image-banner-1.jpg",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
+      "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp",
+      "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp",
+      "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp",
       "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp"
     ]
   }

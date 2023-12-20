@@ -1,10 +1,15 @@
 import './Section.sass';
 import { Link } from 'react-router-dom';
 
-function Section({ id }) {
+function Section({ id, cover, title }) {
   return (
-    <Link to={`/${id}`} className="section">
-      <img src="src\assets\image-banner-1.jpg" className="section__image"></img>
+    <Link to={`/${id}`} className="section" key={id}>
+      <img
+        src={cover}
+        key={id}
+        alt={`Cover for ${title}`}
+        className="section__image"
+      ></img>
     </Link>
   );
 }
