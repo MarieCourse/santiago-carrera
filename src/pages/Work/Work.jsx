@@ -24,7 +24,7 @@ function Work() {
 
   const handleOpenModal = (index) => {
     setActualImage(index);
-    openModal();
+    openModal({ type: 'gallery', content: pictures });
   };
 
   // const closeModal = () => {

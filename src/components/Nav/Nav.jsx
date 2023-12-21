@@ -6,9 +6,10 @@ import projectsData from '../../data/projects.json';
 import Modal from '../Modal/Modal';
 import useModal from '../../hooks/useModal';
 import Bio from '../Bio/Bio';
+import Statement from '../Statement/Statement';
 
 function Nav() {
-  const { isOpen, openModal, closeModal } = useModal();
+  const { isOpen, openModal, closeModal, content } = useModal();
   // const [showLinks, setShowLinks] = useState(false);
   // // const location = useLocation();
 
@@ -36,7 +37,6 @@ function Nav() {
             </Link>
           </li>
         ))}
-
         <span className="navbar__separateur"></span>
         <li
           className="navbar__title"
@@ -45,10 +45,11 @@ function Nav() {
           Bio
         </li>
         <span className="navbar__separateur"></span>
-        <li>
-          <Link to="/" className="navbar__title">
-            Statement
-          </Link>
+        <li
+          className="navbar__title"
+          onClick={() => openModal({ type: 'text', content: <Statement /> })}
+        >
+          Statement
         </li>
         <span className="navbar__separateur"></span>
         <li>
@@ -62,7 +63,7 @@ function Nav() {
           type="text"
           closeModal={closeModal}
           isOpen={isOpen}
-          content={<Bio />}
+          content={content}
         />
       )}
       {/* <button className="navbar__burger">

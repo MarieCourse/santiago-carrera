@@ -1,8 +1,12 @@
-import Bio from '../Bio/Bio';
+// import Bio from '../Bio/Bio';
+import { useRef } from 'react';
 import './Modal.sass';
 
 function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
   const modalClassName = isOpen ? 'modal modal__open' : 'modal';
+  const contentRef = useRef(null);
+
+  console.log('content in Modal,', content);
 
   const renderContent = () => {
     switch (type) {
@@ -27,15 +31,7 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
           </>
         );
       case 'text':
-        return (
-          <div className="modal__small">
-            {/* //   <>
-          //     <h2>Bio</h2>
-          //     <p className="modal__text">{content}</p>
-          //   </> */}
-            <Bio />
-          </div>
-        );
+        return <div className="modal__text">{content}</div>;
       case 'form':
         return <form className="modal__form">{content}</form>;
       default:
@@ -48,7 +44,9 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
       <span className="modal__close" onClick={closeModal}>
         &times;
       </span>
-      <div className="modal__content">{renderContent()}</div>
+      <div ref={contentRef} className="modal__content">
+        {renderContent()}
+      </div>
     </div>
   );
 }
