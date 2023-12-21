@@ -3,8 +3,12 @@ import './Nav.sass';
 // import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import projectsData from '../../data/projects.json';
+import Modal from '../Modal/Modal';
+import useModal from '../../hooks/useModal';
+import Bio from '../Bio/Bio';
 
 function Nav() {
+  const { isOpen, openModal, closeModal } = useModal();
   // const [showLinks, setShowLinks] = useState(false);
   // // const location = useLocation();
 
@@ -24,9 +28,9 @@ function Nav() {
         SANTIAGO CARRERA
       </a>
       <ul className="navbar__links">
-        <li className="navbar__item">Series</li>
+        <li className="navbar__title">Proyectos</li>
         {projectsData.map((project) => (
-          <li key={project.id} className="navbar__item">
+          <li key={project.id}>
             <Link to={`/${project.id}`} className="navbar__link">
               {project.title}
             </Link>
@@ -34,27 +38,36 @@ function Nav() {
         ))}
 
         <span className="navbar__separateur"></span>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
-            Bio
-          </Link>
+        <li
+          className="navbar__title"
+          onClick={() => openModal({ type: 'text', content: <Bio /> })}
+        >
+          Bio
         </li>
         <span className="navbar__separateur"></span>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
+        <li>
+          <Link to="/" className="navbar__title">
             Statement
           </Link>
         </li>
         <span className="navbar__separateur"></span>
-        <li className="navbar__item">
-          <Link to="/" className="navbar__link">
+        <li>
+          <Link to="/" className="navbar__title">
             Contacto
           </Link>
         </li>
       </ul>
-      <button className="navbar__burger">
+      {isOpen && (
+        <Modal
+          type="text"
+          closeModal={closeModal}
+          isOpen={isOpen}
+          content={<Bio />}
+        />
+      )}
+      {/* <button className="navbar__burger">
         <span className="burger-bar"></span>
-      </button>
+      </button> */}
     </nav>
   );
 }

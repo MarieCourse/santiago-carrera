@@ -4,10 +4,13 @@ import { useParams } from 'react-router-dom';
 import projectsData from '../../data/projects.json';
 import Modal from '../../components/Modal/Modal';
 import Error from '../../components/Error/Error';
+import useModal from '../../hooks/useModal';
 
 function Work() {
   const { id } = useParams();
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
+  const { isOpen, openModal, closeModal } = useModal();
+
   const [actualImage, setActualImage] = useState(0);
 
   const selectedProject = projectsData.find((project) => project.id === id);
@@ -19,14 +22,14 @@ function Work() {
   // Déstructuration d'objets pour extraire les propriétés individuelles de l'objet  du projet sélectionné.
   const { title, info, pictures } = selectedProject;
 
-  const openModal = (index) => {
+  const handleOpenModal = (index) => {
     setActualImage(index);
-    setModalOpen(true);
+    openModal();
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalOpen(false);
+  // };
 
   const changeImage = (direction) => {
     let newIndex = actualImage + direction;
@@ -49,17 +52,18 @@ function Work() {
             key={index}
             src={picture}
             alt={`${title} by Santiago Carrera`}
-            onClick={() => openModal(index)}
+            onClick={() => handleOpenModal(index)}
           />
         ))}
       </div>
       <p className="info">{info}</p>
-      {modalOpen && (
+      {isOpen && (
         <Modal
+          type="gallery"
           image={pictures[actualImage]}
           closeModal={closeModal}
           changeImage={changeImage}
-          isOpen={modalOpen}
+          isOpen={isOpen}
         />
       )}
     </div>
