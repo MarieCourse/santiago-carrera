@@ -1,12 +1,9 @@
-// import Bio from '../Bio/Bio';
 import { useRef } from 'react';
 import './Modal.sass';
 
 function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
   const modalClassName = isOpen ? 'modal modal__open' : 'modal';
   const contentRef = useRef(null);
-
-  console.log('content in Modal,', content);
 
   const renderContent = () => {
     switch (type) {
@@ -32,8 +29,6 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
         );
       case 'text':
         return <div className="modal__text">{content}</div>;
-      case 'form':
-        return <form className="modal__form">{content}</form>;
       default:
         return null;
     }
@@ -41,12 +36,16 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
 
   return (
     <div className={modalClassName}>
-      <span className="modal__close" onClick={closeModal}>
-        &times;
-      </span>
-      <div ref={contentRef} className="modal__content">
-        {renderContent()}
-      </div>
+      {isOpen && (
+        <>
+          <span className="modal__close" onClick={closeModal}>
+            &times;
+          </span>
+          <div ref={contentRef} className="modal__content">
+            {renderContent()}
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -12,9 +12,16 @@
     &__content
         margin: auto
         display: flex
-        flex-direction: row
+        flex-direction: column
         align-items: center
-        justify-content: space-around
+        justify-content: space-evenly
+        width: 100%
+
+    &.modal__open
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
 
     &__image
         max-width: 700px
@@ -27,16 +34,11 @@
         font-size: 40px
         font-weight: bold
         transition: 0.3s
-    &:hover,
-    &:focus
-        color: #bbb
-        text-decoration: none
-        cursor: pointer
-
-    &__open
-        display: flex
-        flex-direction: column
-        align-items: center
+        &:hover,
+        &:focus
+            color: #bbb
+            text-decoration: none
+            cursor: pointer
 
     &__controls
         display: flex
@@ -47,7 +49,7 @@
         background-color: white
         color: black
         width: 60%
-        padding: 30px
+        padding: 50px
         border-radius: 15px
 
 .previous,

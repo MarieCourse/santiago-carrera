@@ -7,6 +7,7 @@ import Modal from '../Modal/Modal';
 import useModal from '../../hooks/useModal';
 import Bio from '../Bio/Bio';
 import Statement from '../Statement/Statement';
+import Contact from '../Contact/Contact';
 
 function Nav() {
   const { isOpen, openModal, closeModal, content } = useModal();
@@ -52,10 +53,11 @@ function Nav() {
           Statement
         </li>
         <span className="navbar__separateur"></span>
-        <li>
-          <Link to="/" className="navbar__title">
-            Contacto
-          </Link>
+        <li
+          className="navbar__title"
+          onClick={() => openModal({ type: 'text', content: <Contact /> })}
+        >
+          Contacto
         </li>
       </ul>
       {isOpen && (

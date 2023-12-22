@@ -13,6 +13,9 @@ const useModal = () => {
     setIsOpen(false);
   };
 
+  console.log('isOpen:', isOpen);
+  console.log('content:', content);
+
   return {
     isOpen,
     content,
