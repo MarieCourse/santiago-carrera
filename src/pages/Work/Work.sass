@@ -1,15 +1,17 @@
 .gallery
-    display: grid
-    grid-template-columns: 1fr 1fr 1fr
-    margin: 50px 0
-    gap: 50px
+    column-count: 2
+    column-gap: 30px
     align-items: center
+    max-width: 100%
+    margin: 0 auto
 
     &__image
         width: 100%
         object-fit: cover
         transition: transform .1s ease-in-out
         cursor: pointer
+        margin: 15px 0
+        break-inside: avoid-column
         &:hover
             transform: scale(0.97)
             -ms-transform: scale(0.97)
@@ -17,3 +19,7 @@
 
 .info
     text-align: justify
+
+@media screen and (max-width: 767px)
+    .gallery
+        column-count: 1

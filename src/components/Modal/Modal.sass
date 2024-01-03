@@ -6,7 +6,6 @@
     top: 0
     width: 100%
     height: 100%
-    overflow: auto
     background-color: rgba(0,0,0,0.9)
 
     &__content
@@ -15,13 +14,15 @@
         flex-direction: column
         align-items: center
         justify-content: space-evenly
-        width: 100%
+        width: 80%
 
     &.modal__open
         display: flex
         flex-direction: column
         align-items: center
         justify-content: center
+        z-index: 3
+        overflow-y: auto
 
     &__image
         max-width: 700px
@@ -70,3 +71,30 @@
     right: 90%
 .next
     right: 10%
+
+@media screen and (max-width: 767px)
+    .modal
+        background-color: white
+        height: 100vh
+        overflow-y: auto
+        &__content
+            width: 100%
+        &__text,
+        &__image
+            width: 80%
+            padding: 0
+            margin: 40px 0
+
+        &__close
+            font-size: 30px
+            right: 15px
+        &.modal__open
+            justify-content: flex-start
+
+    .previous,
+    .next
+        color: transparent
+        &:hover,
+        &:focus
+            color: transparent
+            padding: 0

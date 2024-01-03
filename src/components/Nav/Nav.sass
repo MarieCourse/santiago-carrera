@@ -1,23 +1,25 @@
 .navbar
-  min-width: 300px
+  display: flex
+  flex-flow: column wrap
+  width: 300px
   text-align: left
   padding: 45px 0 0 45px
   font-weight: 300
   letter-spacing: 1.5px
-  font-size: 1vw
+  font-size: 1.5rem
 
   &__logo
-    line-height: 3rem
-    font-size: 2.5rem
-    color: inherit
+    font-size: 3rem
+    font-weight: 400
 
   &__links
     margin-top: 40px
     line-height: 5rem
     cursor: pointer
+    text-wrap: nowrap
 
   &__title
-    font-weight: 400
+    font-weight: 600
 
   &__link
     &:hover
@@ -27,61 +29,108 @@
     display: block
     width: 60px
     height: 0.5px
-    background-color: #696868
+    background-color: #8b8b8b
     border: none
     margin: 5px 0
 
-    //   &__burger
-//     width: 40px
-//     height: 40px
-//     background-color: transparent
-//     color: black
-//     border: none
-//     display: block
-//     position: fixed
-//     top: 1rem
-//     right: 2rem
-//     z-index: 2
+  &__burger
+    width: 40px
+    height: 40px
+    background-color: transparent
+    color: black
+    border: none
 
-//     &:hover
-//       cursor: pointer
+    &:hover
+      cursor: pointer
 
-// .burger-bar,
-// .burger-bar::before,
-// .burger-bar::after
-//   display: block
-//   width: 40px
-//   height: 3px
-//   position: relative
-//   border-radius: 3px
-//   background: black
-//   transition: all 0.5s ease-in-out
+@media screen and (max-width: 767px)
+  .navbar
+    position: fixed
+    text-align: center
+    padding: 0
+    color: white
+    z-index: 3
+    &.hide-nav
+      flex-direction: row
 
-// .burger-bar::before,
-// .burger-bar::after
-//   content: ''
-//   position: absolute
-//   left: 0
+    &__logo
+      margin: 15px
+      text-align: left
+      width: 50%
 
-// .burger-bar::before
-//   transform: translateY(-12px)
+    &__links
+      display: flex
+      flex-direction: column
+      justify-content: space-evenly
+      align-items: center
+      position: fixed
+      right: -100vw
+      bottom: 0
+      width: 0
+      height: 100vh
+      visibility: hidden
+      background-color: rgba(0, 0, 0, 0.8)
+      transition: all 0.8s ease-out
 
-// .navbar__burger .burger-bar::after
-//   transform: translateY(12px)
+    &__title
+      display: block
 
-// .show-nav .burger-bar::before
-//   transform: rotate(45deg)
-//   background-color: white
+    &__link
+      font-weight: 500
+      font-size: 1.2rem
+      padding: 0 0.3rem
+      color: inherit
+      letter-spacing: 1.5px
 
-// .show-nav .burger-bar::after
-//   transform: rotate(-45deg)
-//   background-color: white
+    &__separateur
+      background-color: white
 
-// .show-nav .burger-bar
-//   width: 0
-//   background: transparent
+    &__burger
+      display: block
+      position: fixed
+      top: 3rem
+      right: 2rem
+      z-index: 2
 
-// .show-nav .navbar__links
-//   width: 50vw
-//   right: 0
-//   visibility: visible
+      &:hover
+        cursor: pointer
+
+  .show-nav .navbar__links
+    width: 100vw
+    right: 0
+    visibility: visible
+
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after
+    display: block
+    width: 20px
+    height: 2px
+    position: relative
+    border-radius: 3px
+    background: black
+    transition: all 0.5s ease-in-out
+
+  .burger-bar::before,
+  .burger-bar::after
+    content: ''
+    position: absolute
+    left: 0
+
+  .burger-bar::before
+    transform: translateY(-12px)
+
+  .navbar__burger .burger-bar::after
+    transform: translateY(12px)
+
+  .show-nav .burger-bar::before
+    transform: rotate(45deg)
+    background-color: white
+
+  .show-nav .burger-bar::after
+    transform: rotate(-45deg)
+    background-color: white
+
+  .show-nav .burger-bar
+    width: 0
+    background: transparent

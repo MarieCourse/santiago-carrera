@@ -1,6 +1,6 @@
 // import { useEffect } from 'react';
 import './Nav.sass';
-// import { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import projectsData from '../../data/projects.json';
 import Modal from '../Modal/Modal';
@@ -11,29 +11,32 @@ import Contact from '../Contact/Contact';
 
 function Nav() {
   const { isOpen, openModal, closeModal, content } = useModal();
-  // const [showLinks, setShowLinks] = useState(false);
-  // // const location = useLocation();
+  const [showLinks, setShowLinks] = useState(false);
 
-  // const handleShowLinks = () => {
-  //   setShowLinks(!showLinks);
-  // };
-  // // Fermeture de la Nav après avoir cliqué sur un lien
-  // const closeNav = () => {
-  //   if (showLinks) {
-  //     setShowLinks(false);
-  //   }
-  // };
+  const handleShowLinks = () => {
+    setShowLinks(!showLinks);
+  };
+  // Fermeture de la Nav après avoir cliqué sur un lien
+  const closeNav = () => {
+    if (showLinks) {
+      setShowLinks(false);
+    }
+  };
 
   return (
-    <nav className="navbar">
-      <a href="/" className="navbar__logo">
+    <nav className={`navbar ${showLinks ? 'show-nav' : 'hide-nav'}`}>
+      <a href="/" className="navbar__logo" onClick={closeNav}>
         SANTIAGO CARRERA
       </a>
       <ul className="navbar__links">
         <li className="navbar__title">Proyectos</li>
         {projectsData.map((project) => (
           <li key={project.id}>
-            <Link to={`/${project.id}`} className="navbar__link">
+            <Link
+              to={`/${project.id}`}
+              className="navbar__link"
+              onClick={closeNav}
+            >
               {project.title}
             </Link>
           </li>
@@ -41,21 +44,30 @@ function Nav() {
         <span className="navbar__separateur"></span>
         <li
           className="navbar__title"
-          onClick={() => openModal({ type: 'text', content: <Bio /> })}
+          onClick={() => {
+            closeNav();
+            openModal({ type: 'text', content: <Bio /> });
+          }}
         >
           Bio
         </li>
         <span className="navbar__separateur"></span>
         <li
           className="navbar__title"
-          onClick={() => openModal({ type: 'text', content: <Statement /> })}
+          onClick={() => {
+            closeNav();
+            openModal({ type: 'text', content: <Statement /> });
+          }}
         >
           Statement
         </li>
         <span className="navbar__separateur"></span>
         <li
           className="navbar__title"
-          onClick={() => openModal({ type: 'text', content: <Contact /> })}
+          onClick={() => {
+            closeNav();
+            openModal({ type: 'text', content: <Contact /> });
+          }}
         >
           Contacto
         </li>
@@ -68,9 +80,9 @@ function Nav() {
           content={content}
         />
       )}
-      {/* <button className="navbar__burger">
+      <button className="navbar__burger" onClick={handleShowLinks}>
         <span className="burger-bar"></span>
-      </button> */}
+      </button>
     </nav>
   );
 }

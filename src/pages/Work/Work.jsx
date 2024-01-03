@@ -45,6 +45,7 @@ function Work() {
   return (
     <div className="main" key={id}>
       <h2>{title}</h2>
+      <p className="info">{info}</p>
       <div className="gallery">
         {pictures.map((picture, index) => (
           <img
@@ -56,7 +57,6 @@ function Work() {
           />
         ))}
       </div>
-      <p className="info">{info}</p>
       {isOpen && (
         <Modal
           type="gallery"
