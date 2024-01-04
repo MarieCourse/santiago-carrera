@@ -36,31 +36,29 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
     switch (type) {
       case 'gallery':
         return (
-          <>
-            <img className="modal__image" src={image} aria-hidden={!isOpen} />
-            <div className="modal__controls">
-              <a
-                className="modal__control previous"
-                onClick={() => changeImage(-1)}
-                ref={prevBtnRef}
-                tabIndex={isOpen ? '0' : '-1'}
-                role="button"
-                aria-label="Previous Image"
-              >
-                &#10094;
-              </a>
-              <a
-                className="modal__control next"
-                onClick={() => changeImage(+1)}
-                ref={nextBtnRef}
-                tabIndex={isOpen ? '0' : '-1'}
-                role="button"
-                aria-label="Next Image"
-              >
-                &#10095;
-              </a>
-            </div>
-          </>
+          <div className="modal__image">
+            <a
+              className="previous"
+              onClick={() => changeImage(-1)}
+              ref={prevBtnRef}
+              tabIndex={isOpen ? '0' : '-1'}
+              role="button"
+              aria-label="Previous Image"
+            >
+              &#10094;
+            </a>
+            <img className="image" src={image} aria-hidden={!isOpen} />
+            <a
+              className="next"
+              onClick={() => changeImage(+1)}
+              ref={nextBtnRef}
+              tabIndex={isOpen ? '0' : '-1'}
+              role="button"
+              aria-label="Next Image"
+            >
+              &#10095;
+            </a>
+          </div>
         );
       case 'text':
         return (

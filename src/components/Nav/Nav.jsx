@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 import './Nav.sass';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -29,7 +28,15 @@ function Nav() {
         SANTIAGO CARRERA
       </a>
       <ul className="navbar__links">
-        <li className="navbar__title">Proyectos</li>
+        <li
+          className="navbar__title"
+          onClick={() => {
+            closeNav();
+            window.location.href = '/';
+          }}
+        >
+          Proyectos
+        </li>
         {projectsData.map((project) => (
           <li key={project.id}>
             <Link

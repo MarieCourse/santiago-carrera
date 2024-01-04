@@ -2,6 +2,7 @@ import './Formulaire.sass';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import emailjs from '@emailjs/browser';
 
 function Formulaire() {
   const schema = yup
@@ -14,8 +15,8 @@ function Formulaire() {
         .required('Indicar un email válido por favor'),
       phone: yup
         .number()
-        .typeError('Indicar un numero de telefono valido por favor'),
-      message: yup.string().required('El mensaje no puede estra vacio'),
+        .typeError('Indicar un número de teléfono válido por favor'),
+      message: yup.string().required('El mensaje no puede estar vacío'),
     })
     .required();
 
@@ -27,13 +28,36 @@ function Formulaire() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = () => {
+  const onSubmit = (data, r) => {
     alert('Gracias por su mensaje. Le responderé a la brevedad');
+    const templateId = 'template_owloq5k';
+    const serviceId = 'service_whx34ar';
+    sendFeedback(serviceId, templateId, {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+      reply_to: r.target.reset(),
+    });
+  };
+
+  const sendFeedback = (serviceId, templateId, variables) => {
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        variables,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then((res) => {
+        console.log('success', res);
+      })
+      .catch((err) => console.error('Hay un error en el envio del email', err));
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit(onsubmit)}>
-      <div className="form-content">
+    <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+      <div>
         <label htmlFor="name" className="label-contact">
           Nombre :
         </label>
@@ -42,7 +66,7 @@ function Formulaire() {
           type="text"
           id="name"
           name="name"
-          placeholder="Nombre"
+          placeholder="John Doe"
           {...register('name')}
         />
         {errors.name && <p id="c-yup">{errors.name.message}</p>}
@@ -70,16 +94,18 @@ function Formulaire() {
           {...register('phone')}
         />
         {errors.phone && <p id="c-yup">{errors.phone.message}</p>}
+      </div>
+      <div>
         <label htmlFor="message" className="label-contact">
           {' '}
           Mensaje :
         </label>
         <textarea
-          className="message-contact"
-          placeholder="Merci de renseigner vos questions ou commentaires"
+          className="input-contact"
+          placeholder="Indique sus comentarios o mensaje por favor"
           id="message"
           cols="20"
-          rows="10"
+          rows="5"
           name="message"
           {...register('message')}
         ></textarea>

@@ -1,17 +1,20 @@
 .contact-form
-    margin: 3rem auto 0
-    padding: 0rem 2rem 0.8rem
-    text-align: center
-    width: 50%
-
-.form-content
     display: flex
-    flex-direction: column
+    flex-direction: row
+    width: 100%
+    margin: auto
+    gap: 40px
+    & div
+        display: flex
+        flex-direction: column
+        width: 50%
+        justify-content: space-evenly
 
-.input-contact
+.input-contact,
+.button-contact
     border: solid rgba(0, 0, 0, 0.2) 0.2rem
-    border-radius: 5rem
-    margin-bottom: 1rem
+    border-radius: 2rem
+    margin-bottom: 2rem
     line-height: 1.5
     padding: 0.5rem 1rem
 
@@ -20,24 +23,18 @@
 
 .label-contact
     font-weight: bold
-    margin-bottom: 0.3rem
-
-.message-contact
-    border-radius: 1rem
-    border: none
-    text-align: center
-    margin-bottom: 1rem
+    margin-bottom: 0.8rem
 
 .button-contact
-    border-radius: 1rem
-    border: none
-    cursor: pointer
-    background-color: rgba(0, 0, 0, 0.5)
-    margin: 1rem 3rem 0 3rem
+    // border-radius: 1rem
+    // border: none
+    // cursor: pointer
+    // background-color: rgba(0, 0, 0, 0.5)
+    // margin: 1rem 3rem 0 3rem
 
     &:hover
         background-color: green
-
+        color: white
 #c-yup
     color: tomato
     text-align: center
@@ -45,3 +42,12 @@
     &:before
         display: inline
         content: '⚠ '
+
+@media screen and (max-width: 767px)
+    .contact-form
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 0
+        & div
+            width: 100%

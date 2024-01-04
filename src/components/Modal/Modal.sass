@@ -24,9 +24,6 @@
         z-index: 3
         overflow-y: auto
 
-    &__image
-        max-width: 700px
-
     &__close
         position: absolute
         top: 15px
@@ -35,37 +32,37 @@
         font-size: 40px
         font-weight: bold
         transition: 0.3s
-        &:hover,
-        &:focus
+        &:hover
             color: #7a7a7a
             text-decoration: none
             cursor: pointer
 
-    &__controls
+    &__image
         display: flex
         justify-content: space-between
         width: 100%
+        align-items: center
+        .image
+            max-width: 80%
+            max-height: 700px
 
+        .previous,
+        .next
+            color: white
+            padding: 30px
+            cursor: pointer
+            font-size: 20px
+            &:hover,
+            &:focus
+                color: #7a7a7a
+                text-decoration: none
+                cursor: pointer
     &__text
         background-color: white
         color: black
-        width: 60%
+        width: 80%
         padding: 50px
         border-radius: 15px
-
-.previous,
-.next
-    color: white
-    position: absolute
-    top: 50%
-    padding: 30px
-    cursor: pointer
-    font-size: 20px
-    &:hover,
-    &:focus
-        color: #7a7a7a
-        text-decoration: none
-        cursor: pointer
 
 .previous
     right: 90%

@@ -8,9 +8,15 @@ function Contact() {
       <div className="modal__contact">
         <Formulaire />
         <div className="contact__info">
-          <p>Email ejemplo@gmail.com</p>
-          <p>Tel. 06 06 06 06 06</p>
-          <p>Instagram</p>
+          <a href="mailto:meriscarrera@gmail.com">Email ejemplo@gmail.com</a>
+          <a href="tel:+5491160529214">Tel. 06 06 06 06 06</a>
+          <a
+            href="https://www.instagram.com/santi_photo/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="src\assets\instagram.png"></img>
+          </a>
         </div>
       </div>
     </div>
