@@ -12,7 +12,6 @@ root.render(
     <Router>
       <Nav />
       <AppRouter />
-      {/* <Footer /> */}
     </Router>
   </React.StrictMode>
 );

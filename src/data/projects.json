@@ -2,45 +2,52 @@
   {
     "id": "naturaleza-suspendida",
     "title": "Naturaleza Suspendida",
-    "cover": "src/assets/naturaleza-suspendida/naturaleza-suspendida (9).webp",
+    "cover": "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-1.webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (1).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (9).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (4).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (3).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (2).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (5).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (6).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (7).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (10).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (11).webp",
-      "src/assets/naturaleza-suspendida/naturaleza-suspendida (8).webp"
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-1.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-2.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-3.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-4.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-5.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-1000-6.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-7.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-600-8.webp",
+      "src/assets/naturaleza-suspendida/photo-serie-naturaleza-suspendida-santiago-carrera-1000-9.webp"
     ]
   },
   {
     "id": "sustancia",
     "title": "Sustancia",
-    "cover": "src/assets/sustancia/sustancia (3).webp",
+    "cover": "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-1-600.webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
-      "src/assets/sustancia/sustancia (1).webp",
-      "src/assets/sustancia/sustancia (2).webp",
-      "src/assets/sustancia/sustancia (3).webp",
-      "src/assets/sustancia/sustancia (4).webp",
-      "src/assets/sustancia/sustancia (5).webp",
-      "src/assets/sustancia/sustancia (6).webp"
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-1-600.webp",
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-2-600.webp",
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-3-600.webp",
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-4-600.webp",
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-5-600.webp",
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-6-600.webp",
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-7-600.webp",
+      "src/assets/sustancia/photo-serie-sustancia-santiago-carrera-8-600.webp"
     ]
   },
   {
     "id": "ausencia",
     "title": "Ausencia",
-    "cover": "src/assets/ausencia/ausencia (1).webp",
+    "cover": "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-1.webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
-      "src/assets/ausencia/ausencia (1).webp",
-      "src/assets/ausencia/ausencia (2).webp",
-      "src/assets/ausencia/ausencia (3).webp"
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-1.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-2.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-3.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-4.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-5.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-6.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-7.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-8.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-9.webp",
+      "src/assets/ausencia/photo-serie-ausencia-santiago-carrera-600-10.webp"
     ]
   },
   {
@@ -61,13 +68,18 @@
   {
     "id": "isla",
     "title": "Isla",
-    "cover": "src/assets/image-banner-1.jpg",
+    "cover": "src/assets/isla/photo-serie-isla-santiago-carrera-600-1.webp",
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "pictures": [
-      "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp",
-      "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp",
-      "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp",
-      "https://raw.githubusercontent.com/MarieCourse/portfolio/main/portfolio/src/assets/booki-mockup.webp"
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-1.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-2.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-3.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-4.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-5.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-6.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-7.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-8.webp",
+      "src/assets/isla/photo-serie-isla-santiago-carrera-600-9.webp"
     ]
   }
 ]

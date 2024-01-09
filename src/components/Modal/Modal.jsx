@@ -1,21 +1,23 @@
 import { useRef, useEffect } from 'react';
 import './Modal.sass';
+import { useSwipeable } from 'react-swipeable';
 
 function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
+  // Determine the CSS class based on the modal's open/closed state
   const modalClassName = isOpen ? 'modal modal__open' : 'modal';
   const contentRef = useRef(null);
   const closeBtnRef = useRef(null);
   const prevBtnRef = useRef(null);
   const nextBtnRef = useRef(null);
 
-  // Focus sur le bouton de fermeture de la boite dès son ouverture'
+  // Focus on the close button when the modal is opened
   useEffect(() => {
     if (isOpen) {
       closeBtnRef.current.focus();
     }
   }, [isOpen]);
 
-  // Navigation avec le clavier
+  // Handle keyboard navigation
   const handleKeyDown = (e) => {
     switch (e.key) {
       case 'Escape':
@@ -32,11 +34,17 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
     }
   };
 
+  // Set up swipe handlers for image navigation
+  const handlers = useSwipeable({
+    onSwipedLeft: () => changeImage + 1,
+    onSwipedRight: () => changeImage - 1,
+  });
+  // Render content based on the modal type
   const renderContent = () => {
     switch (type) {
       case 'gallery':
         return (
-          <div className="modal__image">
+          <div className="content--image">
             <a
               className="previous"
               onClick={() => changeImage(-1)}
@@ -47,7 +55,9 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
             >
               &#10094;
             </a>
-            <img className="image" src={image} aria-hidden={!isOpen} />
+            <div className="image-container" {...handlers}>
+              <img className="image" src={image} aria-hidden={!isOpen} />
+            </div>
             <a
               className="next"
               onClick={() => changeImage(+1)}
@@ -63,7 +73,7 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
       case 'text':
         return (
           <div
-            className="modal__text"
+            className="content--text"
             role="document"
             aria-label="Modal Content"
           >
@@ -75,6 +85,7 @@ function Modal({ type, content, image, closeModal, changeImage, isOpen }) {
     }
   };
 
+  // Render the modal component
   return (
     <div
       className={modalClassName}

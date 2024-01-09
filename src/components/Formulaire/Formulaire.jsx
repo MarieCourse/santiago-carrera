@@ -5,6 +5,7 @@ import * as yup from 'yup';
 import emailjs from '@emailjs/browser';
 
 function Formulaire() {
+  // Define validation schema using yup
   const schema = yup
     .object({
       name: yup.string().max(50).required('Indicar su nombre por favor'),
@@ -20,6 +21,7 @@ function Formulaire() {
     })
     .required();
 
+  // Set up react-hook-form
   const {
     register,
     formState: { errors },
@@ -28,6 +30,7 @@ function Formulaire() {
     resolver: yupResolver(schema),
   });
 
+  // Handle form submission
   const onSubmit = (data, r) => {
     alert('Gracias por su mensaje. Le responderé a la brevedad');
     const templateId = 'template_owloq5k';
@@ -41,6 +44,7 @@ function Formulaire() {
     });
   };
 
+  // Send email using emailjs
   const sendFeedback = (serviceId, templateId, variables) => {
     emailjs
       .send(

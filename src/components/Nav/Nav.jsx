@@ -9,13 +9,16 @@ import Statement from '../Statement/Statement';
 import Contact from '../Contact/Contact';
 
 function Nav() {
+  // Custom hook for managing modal state
   const { isOpen, openModal, closeModal, content } = useModal();
   const [showLinks, setShowLinks] = useState(false);
 
+  // Toggle visibility of links in the navigation
   const handleShowLinks = () => {
     setShowLinks(!showLinks);
   };
-  // Fermeture de la Nav après avoir cliqué sur un lien
+
+  // Close the navigation after clicking on a link
   const closeNav = () => {
     if (showLinks) {
       setShowLinks(false);
@@ -37,6 +40,7 @@ function Nav() {
         >
           Proyectos
         </li>
+        {/* Map through projectsData and create links for each project */}
         {projectsData.map((project) => (
           <li key={project.id}>
             <Link
@@ -79,6 +83,7 @@ function Nav() {
           Contacto
         </li>
       </ul>
+      {/* Render the Modal component when isOpen is true */}
       {isOpen && (
         <Modal
           type="text"
@@ -87,6 +92,7 @@ function Nav() {
           content={content}
         />
       )}
+      {/* Toggle button for showing/hiding links */}
       <button className="navbar__burger" onClick={handleShowLinks}>
         <span className="burger-bar"></span>
       </button>
